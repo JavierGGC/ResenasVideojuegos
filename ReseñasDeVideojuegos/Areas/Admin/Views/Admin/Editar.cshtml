@@ -1,0 +1,89 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model ReseñasDeVideojuegos.Models.ViewModels.ResenaViewModel
+@{
+    Layout = "_LayoutCRUD";
+}
+
+<main>
+    <div>
+        <h2>Editar review</h2>
+        <form class="crud" method="post" asp-area="Admin" asp-controller="Admin" asp-action="Editar" enctype="multipart/form-data">
+            <table class="tg">
+                <colgroup>
+                    <col style="width: 105px">
+                    <col style="width: 299px">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>Titulo</td>
+                        <td>
+                            <input asp-for="ResenaJuego.Titulo" type="text" readonly required/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Juego</td>
+                        <td>
+                            <input readonly asp-for="ResenaJuego.Juego" type="text" required/>
+                        </td>
+                    <tr>
+                        <td>Calificacion</td>
+                        <td>
+                            <input asp-for="ResenaJuego.Calificacion" type="number" required/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Fecha</td>
+                        <td>
+                            <input readonly asp-for="ResenaJuego.Fecha" type="date" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Compañia</td>
+                        <td>
+                            <input readonly asp-for="ResenaJuego.Compañia" type="text" required/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="tg-73oq">Descripcion</td>
+                        <td class="tg-73oq">
+                            <textarea asp-for="ResenaJuego.Descripcion" maxlength="300" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-73oq">Imagen</td>
+                        <td class="tg-73oq">
+                            <input asp-for="Imagen" id="fileImage" type="file" name="Archivo" accept="image/jpeg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <img id="imagePreview" class="imagen" src="~/imgs_resenasjuegos/@(Model.ResenaJuego.IdResenas).jpg" />
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <input asp-for="ResenaJuego.IdResenas" type="number" hidden />
+            @Html.ValidationSummary()
+            <input type="submit" value="Guardar" />
+            <a href="/Admin/Admin/Index">Regresar</a>
+        </form>
+    </div>
+</main>
+
+<script>
+    function mostrarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.querySelector('#imagePreview').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    document.querySelector("#fileImage").addEventListener("change", event => {
+        mostrarImagen(event.target)
+    });</script>

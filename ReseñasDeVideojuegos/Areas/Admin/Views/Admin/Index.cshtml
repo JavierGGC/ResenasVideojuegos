@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ReseñasDeVideojuegos.Models.Resena>
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env
+@{
+    Layout = "_LayoutCuenta";
+}
+
+<main>
+    <div>
+        <h2>REVIEWS PUBLICADAS</h2>
+        <table class="table table-striped" id="tabla" name="tabla" width="600" border="2px solid black" cellspacing="3" cellpadding="3" style="font-size: 10pt">
+            <tr>
+                <th colspan="7" style="text-align:left;">
+                    <a href="~/admin/admin/agregar">Agregar review</a>
+                </th>
+
+            </tr>
+
+            <tr>
+                <th>Titulo</th>
+                <th>Fecha</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+            @foreach (var j in Model)
+            {
+                <tr>
+                    <td> @j.Titulo </td>
+                    <td> @j.Fecha.ToLongDateString()</td>
+                    <th>
+                        <a href="~/Admin/Admin/Editar/@(j.IdResenas)">Editar</a>
+                    </th>
+                    <th>
+                        <a href="~/Admin/Admin/Eliminar/@(j.IdResenas)">Eliminar</a>
+                    </th>
+                </tr>
+            }
+            </table>
+        </div>
+    </main>

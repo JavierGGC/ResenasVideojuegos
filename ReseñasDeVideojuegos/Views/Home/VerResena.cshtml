@@ -1,0 +1,45 @@
+﻿@model ReseñasDeVideojuegos.Models.Resena
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env
+@{
+    Layout = "_LayoutCuenta";
+}
+
+<main>
+    <div>
+        <table class="tg" style="undefined;table-layout: fixed; width: 480px">
+            <colgroup>
+                <col style="width: 186px">
+                <col style="width: 294px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <td class="nom">
+                        <a href="/Home/Index">Regresar</a>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="tg-73oq" rowspan="5">
+                            <img class="imagen" src="~/imgs_resenasjuegos/@(Model.IdResenas).jpg" />
+                        </td>
+                        <th class="titulo">@Model.Titulo</th>
+                    </tr>
+                    <tr>
+                        <td class="ldj">@Model.Juego</td>
+                    </tr>
+                    <tr>
+                        <td class="ldj">@Model.Compañia</td>
+                    </tr>
+                    <tr>
+                        <td class="ldj">@Model.Calificacion</td>
+                    </tr>
+                    <tr>
+                        <td class="ldj">@Model.Fecha.ToLongDateString()</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="ldj">@Model.Descripcion</td>
+                    </tr>
+            </thead>
+        </table>
+    </div>
+</main>

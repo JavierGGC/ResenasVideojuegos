@@ -1,0 +1,28 @@
+﻿@model ReseñasDeVideojuegos.Models.Resena
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_LayoutCRUD";
+}
+<main>
+    <div>
+        <form method="post" asp-area="Admin" asp-controller="Admin" asp-action="Eliminar">
+            <table class="table table-striped" id="tabla" name="tabla" width="600" border="2" cellspacing="3" cellpadding="3" style="font-size: 10pt">
+                <tr>
+                    <th colspan="2">Acciones</th>
+                </tr>
+                <tr>
+                    <th colspan="2">¿Está seguro de eliminar los datos e imagen de la reseña seleccionada?</th>
+
+                <tr>
+                    <th>
+                        <input type="submit" value="Si" />
+                    </th>
+                    <th>
+                        <a href="/Admin/Admin/Index">No</a>
+                    </th>
+            </table>
+            <input asp-for="IdResenas" type="number" hidden />
+            @Html.ValidationSummary()
+        </form>
+    </div>
+</main>

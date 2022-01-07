@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReseñasVideojuegos", "ReseñasVideojuegos\ReseñasVideojuegos.csproj", "{19E77AA5-AE8F-43D4-9C93-F786C9E5598A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReseñasDeVideojuegos", "ReseñasDeVideojuegos\ReseñasDeVideojuegos.csproj", "{52BAF2D1-2810-4446-9D59-AC826C28F431}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19E77AA5-AE8F-43D4-9C93-F786C9E5598A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19E77AA5-AE8F-43D4-9C93-F786C9E5598A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19E77AA5-AE8F-43D4-9C93-F786C9E5598A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19E77AA5-AE8F-43D4-9C93-F786C9E5598A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BAF2D1-2810-4446-9D59-AC826C28F431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BAF2D1-2810-4446-9D59-AC826C28F431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BAF2D1-2810-4446-9D59-AC826C28F431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BAF2D1-2810-4446-9D59-AC826C28F431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

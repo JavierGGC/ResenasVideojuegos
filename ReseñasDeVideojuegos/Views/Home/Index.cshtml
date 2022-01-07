@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ReseñasDeVideojuegos.Models.Resena>
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env
+@{
+    Layout = "_LayoutCuenta";
+}
+
+<main>
+    <div>
+        <h2>REVIEWS PUBLICADAS</h2>
+        @foreach (var j in Model)
+        {
+            <table class="tg" style="undefined;table-layout: fixed; width: 480px">
+                <colgroup>
+                    <col style="width: 186px">
+                    <col style="width: 294px">
+                </colgroup>
+                <thead>
+
+                    <tr>
+                        <td class="tg-73oq" rowspan="5">
+                            <img class="imagen" src="~/imgs_resenasjuegos/@(j.IdResenas).jpg" />
+                        </td>
+                        <th class="titulo">@j.Titulo</th>
+                    </tr>
+                    <tr>
+                        <td class="ldj">@j.Juego</td>
+                    </tr>
+                    <tr>
+                        <td class="ldj">@j.Fecha.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td class="ldj limitador">@j.Descripcion</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-73oq">
+                            <a href="~/Home/VerResena/@(j.IdResenas)">Ver review completa</a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        }
+    </div>
+</main>
